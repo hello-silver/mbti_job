@@ -1,12 +1,24 @@
 import streamlit as st
 
+# ==========================================
+# 1. 사이드바 메뉴 및 네비게이션 커스텀 설정
+# ==========================================
+main_page = st.Page("app.py", title="🌱 메인 홈", icon="🌱", default=True)
+page1 = st.Page("pages/1_📊_대한민국_MBTI_인구_비율.py", title="1. 대한민국 MBTI 인구 비율", icon="📊")
+page2 = st.Page("pages/2_🌍_주요_국가별_MBTI_분포.py", title="2. 주요 국가별 MBTI 분포", icon="🌍")
+page3 = st.Page("pages/3_💼_대표_직업군_10선_MBTI_분포.py", title="3. 대표 직업군 10선 MBTI 분포", icon="💼")
+
+pg = st.navigation([main_page, page1, page2, page3])
 st.set_page_config(
     page_title="🌱 청소년 MBTI 진로 탐구 센터",
     page_icon="🌱",
     layout="wide"
 )
+pg.run()
 
-# 파스텔 톤 커스텀 CSS
+# ==========================================
+# 2. 파스텔 톤 커스텀 CSS
+# ==========================================
 PASTEL_CSS = """
 <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
@@ -32,6 +44,9 @@ PASTEL_CSS = """
 """
 st.markdown(PASTEL_CSS, unsafe_allow_html=True)
 
+# ==========================================
+# 3. MBTI 진로 추천 데이터
+# ==========================================
 MBTI_CAREER_DATA = {
     "INFP": {
         "title": "열정적인 중재자 🦄",
@@ -195,6 +210,9 @@ MBTI_CAREER_DATA = {
     }
 }
 
+# ==========================================
+# 4. 메인 화면 레이아웃
+# ==========================================
 st.markdown("""
     <div class="header-banner">
         <h1>🌱 청소년 맞춤 MBTI 진로 추천 센터</h1>
