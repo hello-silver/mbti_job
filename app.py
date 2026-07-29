@@ -1,20 +1,13 @@
 import streamlit as st
 
 # ==========================================
-# 1. 사이드바 메뉴 및 네비게이션 커스텀 설정
+# 1. 페이지 전체 기본 설정
 # ==========================================
-main_page = st.Page("app.py", title="🌱 메인 홈", icon="🌱", default=True)
-page1 = st.Page("pages/1_📊_대한민국_MBTI_인구_비율.py", title="1. 대한민국 MBTI 인구 비율", icon="📊")
-page2 = st.Page("pages/2_🌍_주요_국가별_MBTI_분포.py", title="2. 주요 국가별 MBTI 분포", icon="🌍")
-page3 = st.Page("pages/3_💼_대표_직업군_10선_MBTI_분포.py", title="3. 대표 직업군 10선 MBTI 분포", icon="💼")
-
-pg = st.navigation([main_page, page1, page2, page3])
 st.set_page_config(
     page_title="🌱 청소년 MBTI 진로 탐구 센터",
     page_icon="🌱",
     layout="wide"
 )
-pg.run()
 
 # ==========================================
 # 2. 파스텔 톤 커스텀 CSS
@@ -39,7 +32,7 @@ PASTEL_CSS = """
     .pastel-card-pink { background-color: #FFF5F5; border-left: 5px solid #FFB7B2; border-radius: 12px; padding: 18px; margin-bottom: 12px; }
     .pastel-card-blue { background-color: #F0F7FF; border-left: 5px solid #A2D2FF; border-radius: 12px; padding: 18px; margin-bottom: 12px; }
     .pastel-card-green { background-color: #F2F9F1; border-left: 5px solid #B5EAD7; border-radius: 12px; padding: 18px; margin-bottom: 12px; }
-    .pastel-card-yellow { background-color: #FFFDEE; border-left: 5px solid #FFE5B4; border-radius: 12px; padding: 20px; }
+    .pastel-card-yellow { background-color: #FFFDEE; border-left: 5px solid #FFE5B4; border-radius: 20px; padding: 20px; }
 </style>
 """
 st.markdown(PASTEL_CSS, unsafe_allow_html=True)
